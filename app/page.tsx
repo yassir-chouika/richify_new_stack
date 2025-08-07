@@ -1,20 +1,19 @@
 "use client";
 
-import { Authenticated, Unauthenticated } from "convex/react";
-import { SignInButton, UserButton } from "@clerk/nextjs";
+import { Authenticated } from "convex/react";
 import { useQuery } from "convex/react";
 import { api } from "../convex/_generated/api";
+import { Navbar1 } from "@/components/ui/navbar-1";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
     <>
+      <Navbar1 />
+      <Hero />
       <Authenticated>
-        <UserButton />
         <Content />
       </Authenticated>
-      <Unauthenticated>
-        <SignInButton />
-      </Unauthenticated>
     </>
   );
 }
